@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 2%;
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar {
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    font-size: x-large;
+  }
+  .Login{
+    font-size: medium;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    margin-right: 20px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .logo {width: 10%;
+
+  
+  }
+  
+  .burger {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+    }
+  
+    .nav-links li {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .burger {
+      display: block;
+    }
+  
+    .nav-active {
+      display: flex;
+    }
+  }
+  
