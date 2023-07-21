@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    padding: 0;
+    padding: 2%;
     font-family: Arial, sans-serif;
   }
   
@@ -11,6 +11,10 @@ body {
     align-items: center;
     padding: 10px;
     color: white;
+    font-size: x-large;
+  }
+  .Login{
+    font-size: medium;
   }
   
   .nav-links {
@@ -31,8 +35,9 @@ body {
     color: white;
   }
   
-  .logo {
-    font-size: 24px;
+  .logo {width: 10%;
+
+  
   }
   
   .burger {
