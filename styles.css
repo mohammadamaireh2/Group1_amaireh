@@ -157,33 +157,6 @@ box-shadow:1px 1px 10px #333;
   }
   
   
-  @media screen and (max-width: 768px) {
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 50px;
-      left: 0;
-      width: 96%;
-      background-color: #333;
-      margin-top:3%;
-      margin-left: 2%;
-      
-    }
-  
-    .nav-links li {
-      margin-right: 0;
-      margin-bottom: 10px;
-    }
-  
-    .burger {
-      display: block;
-    }
-  
-    .nav-active {
-      display: flex;
-    }
-  }
   a{
     text-decoration: none;
   }
@@ -214,3 +187,76 @@ box-shadow:1px 1px 10px #333;
     #email{
       height: 40px;
     }
+    @media screen and (max-width: 768px) {
+      .nav-links {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 50px;
+          left: 0;
+          width: 100%;
+          background-color: #333;
+          margin-top: 3%;
+          margin-left: 0;
+          padding-left: 0;
+      }
+  
+      .nav-links li {
+          margin-right: 0;
+          margin-bottom: 10px;
+          margin-left: 0;
+      }
+  
+      .burger {
+          display: block;
+      }
+  
+      .nav-active {
+          display: flex;
+      }
+  
+      /* Adjustments for the main section */
+      .main {
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+      }
+  
+      .mainimg {
+          width: 80%;
+          margin-top: 5%;
+      }
+  
+      .maintext {
+          margin-top: 5%;
+          width: 80%;
+          text-align: center;
+      }
+  
+      .buttonmain {
+          margin-top: 10px;
+          margin-right: 0;
+      }
+  
+      /* Adjustments for the quiz cards */
+      #quizzes {
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+      }
+  
+      .card {
+          width: 80%;
+      }
+  
+      /* Adjustments for the contact section */
+      #contact {
+          grid-template-columns: 100%;
+      }
+  
+      #name,
+      #email,
+      #message {
+          width: 100%;
+      }
+  }
