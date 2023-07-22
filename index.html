@@ -1,29 +1,142 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <nav class="navbar">
-    <img src="./2023-07-21__2_-removebg-preview (1).png " class="logo">
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#quizzes">Quizzes</a></li>
-      <li><a href="#about">About Us</a></li>
-      <li></li>
-      <div class="user-icon">&#128100;</div>
-      <li class="Login"><a href="#signup">Sign Up</a></li>
-      <div class="user-icon">&#128100;</div>
-      <li class="Login"><a href="#login">Login</a></li>
-    </ul>
-    <div class="burger">&#9776;</div>
-  </nav>
 
-  <script src="./main.js"></script>
-</body>
-</html>
+    <nav class="navbar">
+        <img src="./2023-07-22__2_-removebg-preview.png" class="logo">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#quizzes">Quizzes</a></li>
+            <li><a href="#about">About Us</a></li>
+        </ul>
+        <button id="b1">☀️</button>
+        <button id="b2">🌙</button>
+
+        <div class="burger">&#9776;</div>
+    </nav>
+    <div class="main">
+
+        <div class="pic">
+            <img src="./giphy (7).gif" class="mainimg">
+        </div>
+        <div class="maintext">
+            <h1>Discover Your Coding Capabilities</h1>
+            <h3 style="width: 150%;">Dive into a world of coding adventures and innovation. Don't miss out, join us
+                now!</h3>
+            <button class="buttonmain"><a href="./Register/register.html">Sign up</a></button>
+            <button class="buttonmain"><a href="./Register/Login.html">Login</a></button>
+        </div>
+    </div>
+    <h1 style="text-align: center;"> Quizzes</h1>
+    <section id="quizzes">
+
+        <div class="card">
+            <img class="quiz" src="./giphy.gif" alt="Image 1">
+            <h2>HTML Quiz</h2>
+            <button class="start-button">Start Now</button>
+        </div>
+
+        <div class="card">
+            <img class="quiz" src="./giphy (4).gif" alt="Image 2">
+            <h2>CSS Quiz</h2>
+            <button class="start-button">Start Now</button>
+        </div>
+
+        <div class="card">
+            <img style="width: 100%;" class="quiz" src="./giphy (3).gif" alt="Image 3 ">
+            <h2>JS Quiz</h2>
+            <button class="start-button">Start Now</button>
+        </div>
+    </section>
+
+    <h1 style="text-align: center;">Contact Me</h1>
+
+    <div id="contact">
+        <div class="person">
+            <form action="mailto:baidaaalkhalaf14@example.com" method="post" enctype="text/plain"
+                style="display:flex; flex-direction: column;">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+        </div>
+        <div class="message">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <input type="submit" value="send">
+            </form>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 Your Website. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#b1').click(function () {
+                $('body').css({
+                    'color': 'black',
+                    'background-color': 'white'
+                });
+                $('.main').css({
+                    'background-color': 'white',
+                    'color': 'black'
+                });
+                $('h1').css({
+                    'color': 'black'
+                });
+                $('h3').css({
+                    'color': 'black'
+                });
+            });
+
+            $('#b2').click(function () {
+                $('body').css({
+                    'color': 'white',
+                    'background-color': 'black'
+                });
+
+                $('.main').css({
+                    'background-color': 'black'
+                });
+                $('.navbar').css({
+                    'background-color': 'black'
+                });
+                $('h1').css({
+                    'color': 'white'
+                });
+                $('h3').css({
+                    'color': 'white'
+                });
+            });
+        });
+    </script>
+    </body>
+    </html>
 
 
+                $('.main').css({
+                    'background-color': 'black'
+                });
+                $('.navbar').css({
+                    'background-color': 'black'
+                });
+                $('h1').css({
+                    'color': 'white'
+                });
+                $('h3').css({
+                    'color': 'white'
+                });
+            });
+        });
+    </script>
