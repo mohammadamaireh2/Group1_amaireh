@@ -1,11 +1,12 @@
 body {
     margin: 0;
-    padding: 2%;
+    padding: 1%;
     font-family: Arial, sans-serif;
+    background-color: #2F3E5B;
   }
   
   .navbar {
-    background-color: #333;
+    background-color: #2F3E5B;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,28 +17,51 @@ body {
   .Login{
     font-size: medium;
   }
-  
   .nav-links {
     list-style: none;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0;
     padding: 0;
+    text-align: left;
+margin-left: 40%;
+   
   }
   
   .nav-links li {
-    margin-right: 20px;
-  }
+    margin-left: 20px; }
   
   .nav-links a {
     text-decoration: none;
     color: white;
+
+  }
+  h1,h3{
+    color: aliceblue;
   }
   
   .logo {width: 10%;
 
   
+  }
+  #b1{
+    font-size: 18px;
+    border-radius: 66px 0px 0px 66px;
+    outline: none;
+    background-color: black;
+    border: silver 1px solid;
+    transition: 1s;
+    margin-left: 20%;
+  }
+  #b2{
+    font-size: 18px;
+    border-radius:0px 66px  66px 0px ;
+    outline: none;
+    background-color: black;
+    border: silver 1px solid;
+    transform: 1s;
+  }
+  #b1:hover,#b2:hover{
+background-color: gray;
+box-shadow:1px 1px 10px #333;
   }
   
   .burger {
@@ -45,29 +69,194 @@ body {
     cursor: pointer;
     display: none;
   }
-  
-  @media screen and (max-width: 768px) {
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 50px;
-      left: 0;
-      width: 100%;
-      background-color: #333;
-    }
-  
-    .nav-links li {
-      margin-right: 0;
-      margin-bottom: 10px;
-    }
-  
-    .burger {
-      display: block;
-    }
-  
-    .nav-active {
-      display: flex;
-    }
+  .main{
+    display: flex;
+    gap:15%;
+    background-color:#2F3E5B;
+    
+  }
+  .maintext{
+    margin-top: 5%;
+    width: 25%;
+  }
+  .mainimg{width: 100%;
+   
+    
+
+  }
+  #quizzes{
+    display: flex;
+    margin-left:1%;
+  }
+ 
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    width: 450px;
   }
   
+  .quiz{
+    width: 100%;
+    min-height: 100px;
+    margin-top: -12%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  h2 {
+    margin-top: 10px;
+  }
+  .buttonmain{
+    margin-top: 20px;
+    margin-right: 10%;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color:#FAC710;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .buttonmain:hover{
+    background-color:rgba(245, 245, 40, 0.412);
+    color: #fff;
+  }
+  
+ .start-button{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .start-button:hover {
+    background-color: #45a049;
+  }
+  
+  .start-button:active {
+    background-color: #3e8e41;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  
+  a{
+    text-decoration: none;
+  }
+  #contact{
+
+    justify-content: left;
+    align-items:start;
+    display: grid;
+    grid-template-columns:50% 40%;
+    gap: 5%;
+    padding: 2%;
+    height: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 93%;
+    margin-left: 2%;
+    
+  }
+
+  #message{display: flex; flex-direction: column;
+    padding-top: 3%;
+    width: 100%;
+    height: 100px;
+  }
+    #name{
+      height: 40px;
+    }
+    #email{
+      height: 40px;
+    }
+    @media screen and (max-width: 768px) {
+      .nav-links {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 50px;
+          left: 0;
+          width: 100%;
+          background-color: #333;
+          margin-top: 3%;
+          margin-left: 0;
+          padding-left: 0;
+      }
+  
+      .nav-links li {
+          margin-right: 0;
+          margin-bottom: 10px;
+          margin-left: 0;
+      }
+  
+      .burger {
+          display: block;
+      }
+  
+      .nav-active {
+          display: flex;
+      }
+  
+      /* Adjustments for the main section */
+      .main {
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+      }
+  
+      .mainimg {
+          width: 80%;
+          margin-top: 5%;
+      }
+  
+      .maintext {
+          margin-top: 5%;
+          width: 80%;
+          text-align: center;
+      }
+  
+      .buttonmain {
+          margin-top: 10px;
+          margin-right: 0;
+      }
+  
+      /* Adjustments for the quiz cards */
+      #quizzes {
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+      }
+  
+      .card {
+          width: 80%;
+      }
+  
+      /* Adjustments for the contact section */
+      #contact {
+          grid-template-columns: 100%;
+      }
+  
+      #name,
+      #email,
+      #message {
+          width: 100%;
+      }
+  }
