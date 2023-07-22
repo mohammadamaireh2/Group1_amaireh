@@ -1,5 +1,6 @@
-function checker() {
-    try{
+function checker() 
+{
+    
      let firstName = document.getElementById('first_name').value;
      let lastName = document.getElementById('last_name').value;
      let birthDate = document.getElementById('birth_date').value;
@@ -8,7 +9,8 @@ function checker() {
      let password = document.getElementById('password').value;
      let confirmPassword = document.getElementById('confirm_password').value;
      let mobileNumber = document.getElementById('mobile_number').value;
- 
+     let position = document.getElementById('position').value;
+
      let regexName = /^[A-Za-z]+$/;
      let birthDateRegex = /^\d{4}-\d{2}-\d{2}$/;
      let passwordRegex = /^(?=.*[A-Z])(?=.*\d{2,})(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,32}$/;
@@ -21,7 +23,8 @@ function checker() {
          BirthDate: birthDate,
          Email: email,
          Password: password,
-         MobileNumber: mobileNumber
+         MobileNumber: mobileNumber,
+         position: position
      };
  
  
@@ -29,10 +32,10 @@ function checker() {
  
  
  
-     if (!regexName.test(firstName) || !regexName.test(lastName)) {
+        if (!regexName.test(firstName) || !regexName.test(lastName)) {
          console.log('First name and last name should contain only letters.');
          return false;
-     }
+        }
      
              if (!birthDateRegex.test(birthDate)  ) {
                  console.log('Invalid birth date format. use YYYY-mm-dd format');
@@ -72,25 +75,22 @@ function checker() {
         
              
              localStorage.setItem("userData",JSON.stringify(userData))
-             
+             alert('register succesful')
              return true;
-         }
-         catch (error) {
-             console.error("An error occurred while parsing JSON:", error.message);
-             return null; 
-           }
-             
-         }
+}
+   
+           
+         
      
      
  
 // LOGIN FUNCTION
 function login() {
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
 
 
-    var storedUserData = JSON.parse(localStorage.getItem('userData'));
+    let storedUserData = JSON.parse(localStorage.getItem('userData'));
 
    
     if (storedUserData) {
@@ -103,6 +103,20 @@ function login() {
     } else {
         alert('No user data found. Please register first.');
     }
+    return true
 }
 
 
+// function redircet() {
+//     console.log('clicked');
+//     if (login()) {
+//     console.log('test');
+//     window.location.assign ('../index.html')
+      
+//       console.log('test2');
+      
+//     } else {
+//       return false;
+//     }
+//   }   
+          
