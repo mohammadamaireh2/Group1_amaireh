@@ -5,6 +5,7 @@ burger.addEventListener('click', ()=> {
   navLinks.classList.toggle('nav-active');
 });
 
+
 document.addEventListener("DOMContentLoaded", function () {
     const startButtons = document.querySelectorAll(".start-button");
   
@@ -14,3 +15,4 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
+
