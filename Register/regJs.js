@@ -1,5 +1,9 @@
-function checker() {
-    try{
+
+
+// Validating register form
+function checker() 
+{
+    
      let firstName = document.getElementById('first_name').value;
      let lastName = document.getElementById('last_name').value;
      let birthDate = document.getElementById('birth_date').value;
@@ -8,7 +12,8 @@ function checker() {
      let password = document.getElementById('password').value;
      let confirmPassword = document.getElementById('confirm_password').value;
      let mobileNumber = document.getElementById('mobile_number').value;
- 
+     let position = document.getElementById('position').value;
+    // regex for inputs
      let regexName = /^[A-Za-z]+$/;
      let birthDateRegex = /^\d{4}-\d{2}-\d{2}$/;
      let passwordRegex = /^(?=.*[A-Z])(?=.*\d{2,})(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,32}$/;
@@ -21,31 +26,32 @@ function checker() {
          BirthDate: birthDate,
          Email: email,
          Password: password,
-         MobileNumber: mobileNumber
+         MobileNumber: mobileNumber,
+         position: position
      };
  
  
  
  
  
- 
-     if (!regexName.test(firstName) || !regexName.test(lastName)) {
+     //checking firstname
+        if (!regexName.test(firstName) || !regexName.test(lastName)) {
          console.log('First name and last name should contain only letters.');
          return false;
-     }
-     
+        }
+            //check birth
              if (!birthDateRegex.test(birthDate)  ) {
                  console.log('Invalid birth date format. use YYYY-mm-dd format');
                  return false;
              }
              
-             
+             // check email 
              if (!emailRegex.test(email)) {
                  console.log('Invalid email format.');
                  return false;
              }
  
-             
+             //check email
              if (email !== confirmEmail) {
                  console.log('Emails do not match.');
                  return false;
@@ -72,37 +78,56 @@ function checker() {
         
              
              localStorage.setItem("userData",JSON.stringify(userData))
-             
+             alert('register succesful')
              return true;
-         }
-         catch (error) {
-             console.error("An error occurred while parsing JSON:", error.message);
-             return null; 
-           }
-             
-         }
-     
-     
+}
+   
+           
+
  
 // LOGIN FUNCTION
 function login() {
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
 
 
-    var storedUserData = JSON.parse(localStorage.getItem('userData'));
+    let storedUserData = JSON.parse(localStorage.getItem('userData'));
 
-   
+    
     if (storedUserData) {
-       
+        
         if (email === storedUserData.Email && password === storedUserData.Password) {
-            alert('Login successful!');
+            alert('done')
+            return true
         } else {
             alert('Invalid email or password.');
+            return false
         }
     } else {
         alert('No user data found. Please register first.');
+        return false
     }
+    
 }
 
+// login btn navgate to homepage
+           
+let buttonlogin = document.querySelector("#loginbtn")
+buttonlogin.addEventListener('click', (e)=> {
+    
+    if (!login()){
+        
+       
+    }
+    else{
+       
+        console.log(`clicked`);
+        
+    
+    }
+})
 
+let buttonlogin2 = document.querySelector("#btnlogin")
+buttonlogin2.addEventListener('click', () => buttonlogin.click() )
+
+      

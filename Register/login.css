@@ -79,19 +79,24 @@ input:focus{
                 inset 0 0 10px rgba(0,255,0,.4);
   }
 }
-button{
+button,
+a {
   margin-top: 30px;
   border-radius: 5px!important;
   font-weight: 600;
   letter-spacing: 1px;
   cursor: pointer;
+  text-decoration: none; /* Added this line for anchor element */
+  color: #868686; /* Added this line for anchor element */
 }
-button:hover{
+
+button:hover,
+a:hover {
   color: #339933;
   border: 1px solid #339933;
-  box-shadow: 0 0 5px rgba(0,255,0,.3),
-              0 0 10px rgba(0,255,0,.2),
-              0 0 15px rgba(0,255,0,.1),
+  box-shadow: 0 0 5px rgba(0, 255, 0, .3),
+              0 0 10px rgba(0, 255, 0, .2),
+              0 0 15px rgba(0, 255, 0, .1),
               0 2px 0 black;
 }
 .link{
