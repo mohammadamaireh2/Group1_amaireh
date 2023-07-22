@@ -1,4 +1,4 @@
-//References
+
 let timeLeft = document.querySelector(".time-left");
 let quizContainer = document.getElementById("container");
 let nextBtn = document.getElementById("next-button");
@@ -9,16 +9,20 @@ let restart = document.getElementById("restart");
 let userScore = document.getElementById("user-score");
 let startScreen = document.querySelector(".start-screen");
 let startButton = document.getElementById("start-button");
-let UserData = JSON.parse(localStorage.getItem('userData'));
-let positionQ= UserData.position;
+
+let storedData = JSON.parse(localStorage.getItem('userData'));
+
+  let quizPosition = storedData.position
+  console.log(quizPosition);
+  
 let questionCount;
 let scoreCount = 0;
 let count = 11;
 let countdown;
-
-//Questions and Options array
-
-const quizArray = [
+var quizArray = []
+//Questions html / css / js
+if (quizPosition === 'html'){
+     quizArray = [
     {
         id: "0",
         question: "Which is the most widely spoken language in the world?",
@@ -56,8 +60,8 @@ const quizArray = [
         correct: "File server",
     }
 
-];
-const HTMl = [
+];} else if (quizPosition === 'css'){
+ quizArray = [
     {
         id: "0",
         question: "HTML STANDS FOR ",
@@ -95,7 +99,47 @@ const HTMl = [
         correct: "Mandarin",
     }
 
-];
+];}
+else if (quizPosition === 'js'){
+    quizArray = [
+       {
+           id: "0",
+           question: "HTML STANDS FOR ",
+           options: ["HYP", "Mandarin", "English", "German"],
+           correct: "Mandarin",
+       },
+       {
+           id: "1",
+           question: "HTML STANDS FOR ",
+           options: ["HYP", "Mandarin", "English", "German"],
+           correct: "Mandarin",
+       },
+       {
+           id: "2",
+           question: "HTML STANDS FOR ",
+           options: ["HYP", "Mandarin", "English", "German"],
+           correct: "Mandarin",
+       },
+       {
+           id: "3",
+           question: "HTML STANDS FOR ",
+           options: ["HYP", "Mandarin", "English", "German"],
+           correct: "Mandarin",
+       },
+       {
+           id: "4",
+           question: "HTML STANDS FOR ",
+           options: ["HYP", "Mandarin", "English", "German"],
+           correct: "Mandarin",
+       },
+       {
+           id: "5",
+           question: "HTML STANDS FOR ",
+           options: ["HYP", "Mandarin", "English", "German"],
+           correct: "Mandarin",
+       }
+   
+   ];}
 
 //Restart Quiz
 restart.addEventListener("click", () => {

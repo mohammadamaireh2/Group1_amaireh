@@ -1,3 +1,6 @@
+
+
+// Validating register form
 function checker() 
 {
     
@@ -10,7 +13,7 @@ function checker()
      let confirmPassword = document.getElementById('confirm_password').value;
      let mobileNumber = document.getElementById('mobile_number').value;
      let position = document.getElementById('position').value;
-
+    // regex for inputs
      let regexName = /^[A-Za-z]+$/;
      let birthDateRegex = /^\d{4}-\d{2}-\d{2}$/;
      let passwordRegex = /^(?=.*[A-Z])(?=.*\d{2,})(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,32}$/;
@@ -31,24 +34,24 @@ function checker()
  
  
  
- 
+     //checking firstname
         if (!regexName.test(firstName) || !regexName.test(lastName)) {
          console.log('First name and last name should contain only letters.');
          return false;
         }
-     
+            //check birth
              if (!birthDateRegex.test(birthDate)  ) {
                  console.log('Invalid birth date format. use YYYY-mm-dd format');
                  return false;
              }
              
-             
+             // check email 
              if (!emailRegex.test(email)) {
                  console.log('Invalid email format.');
                  return false;
              }
  
-             
+             //check email
              if (email !== confirmEmail) {
                  console.log('Emails do not match.');
                  return false;
@@ -80,9 +83,7 @@ function checker()
 }
    
            
-         
-     
-     
+
  
 // LOGIN FUNCTION
 function login() {
@@ -92,31 +93,41 @@ function login() {
 
     let storedUserData = JSON.parse(localStorage.getItem('userData'));
 
-   
+    
     if (storedUserData) {
-       
+        
         if (email === storedUserData.Email && password === storedUserData.Password) {
-            alert('Login successful!');
+            alert('done')
+            return true
         } else {
             alert('Invalid email or password.');
+            return false
         }
     } else {
         alert('No user data found. Please register first.');
+        return false
     }
-    return true
+    
 }
 
+// login btn navgate to homepage
+           
+let buttonlogin = document.querySelector("#loginbtn")
+buttonlogin.addEventListener('click', (e)=> {
+    
+    if (!login()){
+        
+       
+    }
+    else{
+       
+        console.log(`clicked`);
+        
+    
+    }
+})
 
-// function redircet() {
-//     console.log('clicked');
-//     if (login()) {
-//     console.log('test');
-//     window.location.assign ('../index.html')
+let buttonlogin2 = document.querySelector("#btnlogin")
+buttonlogin2.addEventListener('click', () => buttonlogin.click() )
+
       
-//       console.log('test2');
-      
-//     } else {
-//       return false;
-//     }
-//   }   
-          
