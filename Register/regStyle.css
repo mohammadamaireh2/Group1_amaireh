@@ -6,93 +6,111 @@
   
   body {
     font-family: Arial, sans-serif;
-    background: #151515;
+    background: #E0E0E0;
     color: #fff;
     margin: 20px;
     height: 100vh;
     text-align: center;
+    overflow: hidden;
     align-items: center;
     justify-content: center;
+
+  }
+  .login-form{
+
+    overflow: hidden;
+    height: 100vh;
   }
   
   h1 {
+    justify-content: center;
     text-align: center;
-    margin-top: 2%;
+    margin-top: 0%;
+    margin-left: 25%;
+    position: absolute;
+    /* padding-top: 20px; */
+
   }
   
   form {
+    
     width: 75%;
-    margin: 0 auto;
+    height: 100vh;
+    margin: auto auto;
     box-sizing: border-box;
-    padding: 20px;
-    background: #1b1b1b;
-    border: 1px solid black;
+    padding: 40px;
+    overflow: hidden;
+    background: #959B8C;
+    border: 1px solid rgb(128, 119, 119);
     border-radius: 8px;
     box-shadow: inset 0 0 1px #272727;
-    display: flex;
+    display:flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
   
   .field {
     width: 48%; 
-    margin-bottom: 15px;
+    margin-bottom: 5px;
   }
   
   .field.f2 {
     width: 100%; 
   }
   
-  .field .fas{
+  .field input{
+
     height: 50px;
-    width: 60px;
-    color: #868686;
-    font-size: 20px;
-    line-height: 50px;
-    border: 1px solid black;
-    border-right: none;
-    border-radius: 5px 0 0 5px;
-    background: linear-gradient(#333,#222);
+    width: 100%;
+    outline: none;
+    font-size: 19px;
+    color: #f5f0f0;
+    padding: 0 15px;
+    border-radius: 0 5px 5px 0;
+    border: 1px solid #444;
+    
+    width: 100%
   }
-  
-  .field input,
   form button {
     height: 50px;
     width: 100%;
     outline: none;
     font-size: 19px;
-    color: #868686;
+    color: #f5f0f0;
     padding: 0 15px;
     border-radius: 0 5px 5px 0;
     border: 1px solid #444;
-    caret-color: #339933;
-    background: linear-gradient(#333,#222);
+    caret-color: #f9fff9;
+    background: linear-gradient(#3f3f3f,#414040);
     width: 100%;
   }
   
+  
   input:focus{
-    color: #339933;
+    color: #111311;
     box-shadow: 0 0 5px rgba(0,255,0,.2),
                 inset 0 0 5px rgba(0,255,0,.1);
-    background: linear-gradient(#333933,#222922);
+                background: linear-gradient(#0f0e0e,#343333);
     animation: glow .8s ease-out infinite alternate;
   }
   @keyframes glow {
     0%{
-     border-color: #339933;
-     box-shadow: 0 0 5px rgba(0,255,0,.2),
+     border-color: #eaeaea;
+     box-shadow: 0 0 5px rgba(96, 97, 96, 0.2),
                  inset 0 0 5px rgba(0,0,0,.1);
    }
     100%{
-     border-color: #6f6;
-     box-shadow: 0 0 20px rgba(0,255,0,.6),
-                 inset 0 0 10px rgba(0,255,0,.4);
-   }
+     border-color: rgb(239, 245, 239);
+     box-shadow: 0 0 20px rgba(240, 242, 240, 0.6),
+                 inset 0 0 10px rgba(242, 244, 242, 0.4);
+   } 
  }
   label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    color: #0f0e0e
+    
   }
   
   
@@ -108,7 +126,7 @@
      border-radius: 4px;
      box-sizing: border-box;
      background-color: #555;
-     background: linear-gradient(#333,#222);
+     background: #D8D8D6;
  }
 
  input[type="text"]:focus,
@@ -125,18 +143,22 @@
   
  button{
   
-  border-radius: 5px!important;
+  border-radius: 10px!important;
   font-weight: 600;
   letter-spacing: 1px;
   cursor: pointer;
 }
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
 button:hover{
-  color: #339933;
-  border: 1px solid #339933;
-  box-shadow: 0 0 5px rgba(0,255,0,.3),
-              0 0 10px rgba(0,255,0,.2),
-              0 0 15px rgba(0,255,0,.1),
+  color: #eef0ee;
+  /* border: 1px solid #e1ede1; */
+  box-shadow: 0 5PX 5px rgba(251, 251, 251, 0.3),
+              0 0 10px rgba(252, 254, 252, 0.2),
+              0 0 15px rgba(255, 255, 255, 0.1),
               0 2px 0 black;
+              transition: all 0.5;
 }
 /* selector */
 .field select {
@@ -148,14 +170,14 @@ button:hover{
   border-radius: 4px;
   box-sizing: border-box;
   background-color: #555;
-  background: linear-gradient(#333, #222);
+  background: linear-gradient(#3f3f3f,#414040);
   color: #fff; 
 }
 
 .field select:focus {
   outline: none;
   color: #fff;
-  border-color: #99f;
+  border-color: rgb(246, 246, 249);
 }
 
 .field select::-ms-expand {
@@ -180,25 +202,26 @@ button:hover{
   
   .link{
    margin-top: 25px;
-   color: #abababfe;
+   color: #414040;
+   font-weight: 700;
 }
   .link a{
-   color: #339933;
+   color: #fbfcfb;
    text-decoration: none;
 }
   .link a:hover{
-   text-decoration: underline;
+   text-decoration: none;
 }
   /* Media Queries */
   @media screen and (max-width: 768px) {
     form {
-      width: 90%; /* Adjust the form width for smaller screens */
+      width: 90%; 
     }
   }
   
   @media screen and (max-width: 480px) {
     form {
-      width: 100%; /* Further adjust the form width for smaller screens */
+      width: 100%; 
     }
   
     label,
@@ -207,4 +230,6 @@ button:hover{
       font-size: 16px;
     }
   }
-  
+  ::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}  

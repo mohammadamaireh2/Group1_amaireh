@@ -1,80 +1,83 @@
-body{
+body {
   background-image: url(./1690103538773\ \(2\).jpg);
   background-repeat: no-repeat;
 background-size: cover;
 height:80vh;
 background-color: #DBDBDB;
 overflow: hidden;}
-.main{
 
-  margin-top:10%;
-  width :40%;
+.main {
+  margin-top: 10%;
+  width: 40%;
   margin-left: 10%;
 }
-#mainimg{
-width: 200px;
+
+#mainimg {
+  width: 200px;
 }
 #buttonmain2,#btnlogin,#startbtn,#logoutbtn{
-  display:inline-block;
-  background-color:#838F79;
-  color:black;
-  text-decoration:none;
-  border: none;
-  border-radius: 5px;
-  margin-left: 2%;
-  margin-top: 5%;
-  font-size: medium;
-  width:80px ;
-  height: 40PX;
 
+#LogOut:hover {
+  background-color:#454D3B;
 }
-
+#startquiz:hover {
+  background-color:#454D3B;
+}
 #buttonmain2:hover {
   background-color:#454D3B;
 }
 
 
-#btnlogin:hover {
+#buttonmain1:hover {
   background-color:#454D3B;
 }
+
+/* It's better to group the hover and active states together */
+
 #buttonmain2:active {
   background-color:#454D3B;}
   #logoutbtn:hover{background-color:#454D3B;}
   #startbtn:hover{background-color:#454D3B;}
+  background-color: #454D3B;
+}
 
 /* Responsive adjustments for buttons */
+
 @media (max-width: 700px) {
   #buttonmain2, #btnlogin {
     font-size: 14px; /* Reduce font size for smaller screens */
     max-width: 150px; /* Adjust the button width for smaller screens */
-   height: 35PX;
-
+    height: 35px; /* "PX" should be in lowercase */
   }
-  .main{
-   margin-left: 30%;
 
+  .main {
+    margin-left: 30%;
   }
-  
-#mainimg{
- margin-left: -50%;
+
+  #mainimg {
+    margin-left: -50%;
   }
 }
-@media (max-width: 350px)and (min-width: 250px){
+
+@media (max-width: 350px) and (min-width: 250px) {
   body {
     background-image: url(./1690117057871.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-  
   }
-.main{
-  width: 250px;
-  margin-left: 20%;
-  margin-top: 100%;
-}
 
-#mainimg{
-   margin-left: 10%;
+  .main {
+    width: 250px;
+    margin-left: 20%;
+    margin-top: 100%;
+  }
+
+  #mainimg {
+    margin-left: 10%;
     width: 100px;
     margin-top: 20%;
   
 }}
+.hide {
+  display: none;
+}
