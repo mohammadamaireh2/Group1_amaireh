@@ -1,18 +1,13 @@
-const burger = document.querySelector('.burger');
-const navLinks = document.querySelector('.nav-links');
 
-burger.addEventListener('click', ()=> {
-  navLinks.classList.toggle('nav-active');
-});
+    let buttonlogin = document.querySelector("#btnlogin");
 
-
-document.addEventListener("DOMContentLoaded", function () {
-    const startButtons = document.querySelectorAll(".start-button");
-  
-    startButtons.forEach(function (button) {
-      button.addEventListener("click", function () {
-        alert("click on start Now");
-      });
+    buttonlogin.addEventListener('click', _ => {
+        window.location.href = "./Register/Login.html";
     });
-  });
 
+    let buttonsignup = document.querySelector("#buttonmain2");
+
+    buttonsignup.addEventListener('click', _ => {
+        window.location.href = "./Register/register.html";
+    });
+    
