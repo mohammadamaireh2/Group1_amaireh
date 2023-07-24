@@ -92,42 +92,61 @@ function login() {
 
 
     let storedUserData = JSON.parse(localStorage.getItem('userData'));
-
+    
     
     if (storedUserData) {
         
         if (email === storedUserData.Email && password === storedUserData.Password) {
-            alert('done')
+            // alert('login succesfull')
             return true
-        } else {
+        }
+         else {
             alert('Invalid email or password.');
             return false
         }
-    } else {
+            } 
+            else {
         alert('No user data found. Please register first.');
         return false
     }
     
+
+    
 }
 
 // login btn navgate to homepage
-           
-let buttonlogin = document.querySelector("#loginbtn")
-buttonlogin.addEventListener('click', (e)=> {
-    
-    if (!login()){
-        
-       
-    }
-    else{
-       
-        console.log(`clicked`);
-        
-    
-    }
-})
 
-let buttonlogin2 = document.querySelector("#btnlogin")
-buttonlogin2.addEventListener('click', () => buttonlogin.click() )
+// } 
+// let buttonlogin = document.querySelector("#loginbtn")
+// buttonlogin.addEventListener('click', (e)=> {
+    
+//     if (!login()){
+//         e.preventDefault();
+       
+//     }
+//     else{
+        
+//         console.log(`clicked`);
+        
+    
+//     }
+// })
+
+let buttonlogin = document.querySelector("#btnlogin");
+
+buttonlogin.addEventListener('click', (event) => {
+    event.preventDefault();
+    if (!login()) {
+       
+        console.log("Login failed.");
+    } else {
+        console.log("login succes");
+        window.location.href = "../index.html";
+    }
+});
+
+
+
+
 
       

@@ -72,7 +72,7 @@ box-shadow:1px 1px 10px #333;
   .main{
     display: flex;
     gap:15%;
-    background-color:#2F3E5B;
+    background-color:#000000;
     
   }
   .maintext{
@@ -113,7 +113,8 @@ box-shadow:1px 1px 10px #333;
   h2 {
     margin-top: 10px;
   }
-  .buttonmain{
+  .buttonmain , .loginbtn
+  {
     margin-top: 20px;
     margin-right: 10%;
     padding: 10px 20px;
@@ -259,4 +260,7 @@ box-shadow:1px 1px 10px #333;
       #message {
           width: 100%;
       }
+  }
+  .hide {
+    display: none;
   }

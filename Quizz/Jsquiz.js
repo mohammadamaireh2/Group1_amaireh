@@ -59,44 +59,44 @@ if (quizPosition === 'html'){
         options: ["Clip art", "Mother board", "Peripheral", "File server"],
         correct: "File server",
     }
-
+    
 ];} else if (quizPosition === 'css'){
  quizArray = [
     {
         id: "0",
         question: "HTML STANDS FOR ",
         options: ["HYP", "Mandarin", "English", "German"],
-        correct: "Mandarin",
+        correct: "Hyper Markup Language",
     },
     {
         id: "1",
         question: "HTML STANDS FOR ",
         options: ["HYP", "Mandarin", "English", "German"],
-        correct: "Mandarin",
+        correct: "Hyper Markup Language",
     },
     {
         id: "2",
         question: "HTML STANDS FOR ",
         options: ["HYP", "Mandarin", "English", "German"],
-        correct: "Mandarin",
+        correct: "Hyper Markup Language",
     },
     {
         id: "3",
         question: "HTML STANDS FOR ",
         options: ["HYP", "Mandarin", "English", "German"],
-        correct: "Mandarin",
+        correct: "Hyper Markup Language",
     },
     {
         id: "4",
         question: "HTML STANDS FOR ",
         options: ["HYP", "Mandarin", "English", "German"],
-        correct: "Mandarin",
+        correct: "Hyper Markup Language",
     },
     {
         id: "5",
         question: "HTML STANDS FOR ",
         options: ["HYP", "Mandarin", "English", "German"],
-        correct: "Mandarin",
+        correct: "Hyper Markup Language",
     }
 
 ];}
@@ -105,38 +105,38 @@ else if (quizPosition === 'js'){
        {
            id: "0",
            question: "HTML STANDS FOR ",
-           options: ["HYP", "Mandarin", "English", "German"],
-           correct: "Mandarin",
+           options: ["Hyper Markup Language", "Cascading style sheet", "English", "German"],
+           correct: "Hyper Markup Language",
        },
        {
            id: "1",
            question: "HTML STANDS FOR ",
-           options: ["HYP", "Mandarin", "English", "German"],
-           correct: "Mandarin",
+           options: ["Hyper Markup Language", "Cascading style sheet", "English", "German"],
+           correct: "Hyper Markup Language",
        },
        {
            id: "2",
            question: "HTML STANDS FOR ",
-           options: ["HYP", "Mandarin", "English", "German"],
-           correct: "Mandarin",
+           options: ["Hyper Markup Language", "Cascading style sheet", "English", "German"],
+           correct: "Hyper Markup Language",
        },
        {
            id: "3",
            question: "HTML STANDS FOR ",
-           options: ["HYP", "Mandarin", "English", "German"],
-           correct: "Mandarin",
+           options: ["Hyper Markup Language", "Cascading style sheet", "English", "German"],
+           correct: "Hyper Markup Language",
        },
        {
            id: "4",
            question: "HTML STANDS FOR ",
-           options: ["HYP", "Mandarin", "English", "German"],
-           correct: "Mandarin",
+           options: ["Hyper Markup Language", "Cascading style sheet", "English", "German"],
+           correct: "Hyper Markup Language",
        },
        {
            id: "5",
            question: "HTML STANDS FOR ",
-           options: ["HYP", "Mandarin", "English", "German"],
-           correct: "Mandarin",
+           options: ["Hyper Markup Language", "Cascading style sheet", "English", "German"],
+           correct: "Hyper Markup Language",
        }
    
    ];}
@@ -197,7 +197,7 @@ const quizDisplay = (questionCount) => {
     //display current question card
     quizCards[questionCount].classList.remove("hide");
 };
-
+let selectedOption = null;
 //Quiz Creation
 function quizCreator() {
     //randomly sort questions
@@ -225,37 +225,117 @@ function quizCreator() {
     `;
         quizContainer.appendChild(div);
     }
+    nextBtn.disabled = true;
 }
 
 //Checker Function to check if option is correct or not
+// Disable the "Next" button initially
+
+
+// Checker Function to check if option is correct or not
 function checker(userOption) {
     let userSolution = userOption.innerText;
-    let question =
-        document.getElementsByClassName("container-mid")[questionCount];
+    let question = document.getElementsByClassName("container-mid")[questionCount];
     let options = question.querySelectorAll(".option-div");
-
-    //if user clicked answer == correct option stored in object
-    if (userSolution === quizArray[questionCount].correct) {
-        userOption.classList.add("correct");
-        scoreCount++;
-    } else {
-        userOption.classList.add("incorrect");
-        //For marking the correct option
-        options.forEach((element) => {
-            if (element.innerText == quizArray[questionCount].correct) {
-                element.classList.add("correct");
-            }
-        });
-    }
-
-    //clear interval(stop timer)
-    clearInterval(countdown);
-    //disable all options
+  
+    // Disable all options once the user selects one
     options.forEach((element) => {
-        element.disabled = true;
+      element.disabled = true;
     });
-}
+  
+    // If user clicked answer == correct option stored in object
+    if (userSolution === quizArray[questionCount].correct) {
+      userOption.classList.add("correct");
+      scoreCount++;
+    } else {
+      userOption.classList.add("incorrect");
+      // For marking the correct option
+      options.forEach((element) => {
+        if (element.innerText == quizArray[questionCount].correct) {
+          element.classList.add("correct");
+        }
+      });
+    }
+  
+    // Store the selected option for current question
+    selectedOption = userOption;
+  
+    // Enable the Next button
+    nextBtn.disabled = false;
+  
 
+    clearInterval(countdown);
+  }
+// check result page if it displayed or not
+  let resultDisplayed = false;
+  nextBtn.addEventListener(
+    "click",
+    (displayNext = () => {
+      selectedOption = null;
+  
+      nextBtn.disabled = true;
+
+      let question = document.getElementsByClassName("container-mid")[questionCount];
+      let options = question.querySelectorAll(".option-div");
+      options.forEach((element) => {
+        element.disabled = false;
+      });
+       // Check if it's the last question
+    if (questionCount == quizArray.length - 1) {
+      // hide question container and display score
+      displayContainer.classList.add("hide");
+      scoreContainer.classList.remove("hide");
+      // user score
+      userScore.innerHTML =
+        "Your score is " + scoreCount + " out of " + quizArray.length + " questions";
+
+      // Display the result page only if it hasn't been displayed before
+      if (!resultDisplayed) {
+        let resultContainer = document.createElement("div");
+        resultContainer.classList.add("result-container");
+
+        for (let i = 0; i < quizArray.length; i++) {
+          let questionDiv = document.createElement("div");
+          questionDiv.classList.add("result-question");
+
+          let questionNumber = document.createElement("p");
+          questionNumber.classList.add("result-question-number");
+          questionNumber.innerText = "Question " + (i + 1) + ":";
+          questionDiv.appendChild(questionNumber);
+
+          let questionText = document.createElement("p");
+          questionText.classList.add("result-question-text");
+          questionText.innerText = quizArray[i].question;
+          questionDiv.appendChild(questionText);
+
+          let correctAnswer = document.createElement("p");
+          correctAnswer.classList.add("result-correct-answer");
+          correctAnswer.innerText = "Correct Answer: " + quizArray[i].correct;
+          questionDiv.appendChild(correctAnswer);
+
+          resultContainer.appendChild(questionDiv);
+        }
+
+        scoreContainer.appendChild(resultContainer);
+        resultDisplayed = true; // Set the flag to true to indicate that the result page has been displayed
+      }
+    } else {
+        // Clear the selected option before displaying the next question
+        selectedOption = null;
+  
+        // ... Your existing code ...
+  
+        // Increment questionCount to display the next question
+        questionCount += 1;
+  
+        // ... Your existing code ...
+  
+        // Disable the Next button again until the user selects an answer
+        nextBtn.disabled = true;
+      }
+    })
+  );
+ 
 //initial setup
 function initial() {
     quizContainer.innerHTML = "";
@@ -279,4 +359,5 @@ startButton.addEventListener("click", () => {
 window.onload = () => {
     startScreen.classList.remove("hide");
     displayContainer.classList.add("hide");
+    nextBtn.disabled = true;
 };

@@ -6,10 +6,9 @@
   }
   body {
     height: 100vh;
-    background: linear-gradient(184deg,#1b1b1b,#222922);
+    background: linear-gradient(184deg,#8cbc8c,#87a687);
   }
-  .start-screen,
-  .score-container {
+  .start-screen {
     position: absolute;
     top: 0;
     width: 100%;
@@ -18,6 +17,62 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+  .score-container {
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: auto;
+    height: 100vh;
+      overflow: hidden;
+  }
+  
+  .score-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .result-container {
+    margin-top: 20px;
+  }
+  
+  .result-question {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+  
+  .result-question-number {
+    font-weight: bold;
+  }
+  
+  .result-question-text {
+    margin-top: 5px;
+  }
+  
+  .result-correct-answer {
+    margin-top: 5px;
+    font-weight: bold;
+    color: #339933;
+  }
+  
+  .restart {
+    display: inline-block;
+    background-color: #339933;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  .restart:hover {
+    background-color: #267a26;
   }
   button {
     border: none;
@@ -107,5 +162,17 @@
   }
   #user-score {
     font-size: 1.5em;
-    color: #ffffff;
+    color: #000000;
   }
+  
+ /* Add these styles to your existing CSS */
+
+/* Style the correct option and "Next" button on hover */
+
+
+/* Disable the "Next" button when it's disabled */
+#next-button[disabled] {
+  background-color: #555;
+  color: #888;
+  cursor: not-allowed;
+}
