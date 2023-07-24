@@ -21,7 +21,7 @@ let count = 11;
 let countdown;
 var quizArray = []
 //Questions html / css / js
-if (quizPosition === 'html'){
+if ('html' === 'html'){
      quizArray = [
     {
         id: "0",
@@ -64,9 +64,10 @@ if (quizPosition === 'html'){
 
 //Restart Quiz
 restart.addEventListener("click", () => {
-    initial();
-    displayContainer.classList.remove("hide");
-    scoreContainer.classList.add("hide");
+   
+
+ window.location.href = "../index.html";
+
 });
 
 
