@@ -1,32 +1,52 @@
-body{
+body {
   background-image: url(./1690103538773\ \(2\).jpg);
   background-repeat: no-repeat;
+<<<<<<< HEAD
 background-size: cover;
 height: 80vh;
 overflow: hidden;
 }
 .main{
+=======
+  background-size: cover;
+  height:80vh ;
+  overflow: hidden;
+  background-color: #DBDBDB;
+}
+>>>>>>> 736928d186f87f108d62a730cb21de169d7a3d26
 
-  margin-top:10%;
-  width :40%;
+.main {
+  margin-top: 10%;
+  width: 40%;
   margin-left: 10%;
 }
-#mainimg{
-width: 200px;
+
+#mainimg {
+  width: 200px;
 }
+<<<<<<< HEAD
 #buttonmain2,#buttonmain1,#startquiz,#LogOut{
   display:inline-block;
   background-color:#838F79;
   color:black;
   text-decoration:none;
+=======
+
+#buttonmain2, #btnlogin {
+  display: inline-block;
+  background-color: #838F79;
+  color: black;
+  text-decoration: none;
+>>>>>>> 736928d186f87f108d62a730cb21de169d7a3d26
   border: none;
   border-radius: 5px;
   margin-left: 2%;
   margin-top: 5%;
   font-size: medium;
-  height: 40PX;
-
+  width: 80px;
+  height: 40px; /* "PX" should be in lowercase */
 }
+<<<<<<< HEAD
 #LogOut:hover {
   background-color:#454D3B;
 }
@@ -40,46 +60,61 @@ width: 200px;
 
 #buttonmain1:hover {
   background-color:#454D3B;
+=======
+
+#buttonmain2:hover,
+#btnlogin:hover {
+  background-color: #454D3B;
+>>>>>>> 736928d186f87f108d62a730cb21de169d7a3d26
 }
+
+/* It's better to group the hover and active states together */
+
 #buttonmain2:active {
-  background-color:#454D3B;
+  background-color: #454D3B;
 }
+
 /* Responsive adjustments for buttons */
+
 @media (max-width: 700px) {
   #buttonmain2, #btnlogin {
     font-size: 14px; /* Reduce font size for smaller screens */
     max-width: 150px; /* Adjust the button width for smaller screens */
-   height: 35PX;
-
+    height: 35px; /* "PX" should be in lowercase */
   }
-  .main{
-   margin-left: 30%;
 
+  .main {
+    margin-left: 30%;
   }
-  
-#mainimg{
- margin-left: -50%;
+
+  #mainimg {
+    margin-left: -50%;
   }
 }
-@media (max-width: 350px)and (min-width: 250px){
+
+@media (max-width: 350px) and (min-width: 250px) {
   body {
     background-image: url(./1690117057871.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-  
   }
-.main{
-  width: 250px;
-  margin-left: 20%;
-  margin-top: 100%;
-}
 
-#mainimg{
-   margin-left: 10%;
+  .main {
+    width: 250px;
+    margin-left: 20%;
+    margin-top: 100%;
+  }
+
+  #mainimg {
+    margin-left: 10%;
     width: 100px;
     margin-top: 20%;
+<<<<<<< HEAD
   
 }}
 .hide {
   display: none;
+=======
+  }
+>>>>>>> 736928d186f87f108d62a730cb21de169d7a3d26
 }

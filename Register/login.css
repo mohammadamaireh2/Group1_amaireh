@@ -10,24 +10,28 @@ body{
   text-align: center;
   align-items: center;
   justify-content: center;
-  background: #151515;
+  background: #E0E0E0;
 }
 
 .login-form{
   position: relative;
   width: 370px;
   height: auto;
-  background: #1b1b1b;
-  padding: 40px 35px 60px;
+  background:transparent;
+  padding: 70px 35px 60px;
   box-sizing: border-box;
   border: 1px solid black;
   border-radius: 5px;
-  box-shadow: inset 0 0 1px #272727;
-  color: #c7c7c7;
+  box-shadow:  0 0 30px rgba(131, 126, 126, 0.774);
+  color: #fffdfd;
+  backdrop-filter: blur(20px);
+  background-color: #959B8C;
+  
+  
 }
 .text{
   font-size: 30px;
-  color: #c7c7c7;
+  color: #fffafa;
   font-weight: 600;
   letter-spacing: 2px;
 }
@@ -41,43 +45,56 @@ form .field{
 .field .fas{
   height: 50px;
   width: 60px;
-  color: #868686;
+  color: #eae9e9;
   font-size: 20px;
   line-height: 50px;
   border: 1px solid #444;
   border-right: none;
   border-radius: 5px 0 0 5px;
-  background: linear-gradient(#333,#222);
+  background: linear-gradient(#959B8C,#6a6a6a);
 }
-.field input,form button{
+.field input{
   height: 50px;
   width: 100%;
   outline: none;
-  font-size: 19px;
-  color: #868686;
+  font-size: 15px;
+  color: #f9f4f4;
   padding: 0 15px;
   border-radius: 0 5px 5px 0;
   border: 1px solid #444;
-  caret-color: #339933;
-  background: linear-gradient(#333,#222);
+  caret-color: #efeff1;
+  background-color: #D8D8D6 ;
 }
+form button{
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 15px;
+  color: #f9f4f4;
+  padding: 0 15px;
+  border-radius: 0 5px 5px 0;
+  border: 1px solid #444;
+  caret-color: #efeff1;
+  background: linear-gradient(#3f3f3f,#414040);
+}
+
 input:focus{
-  color: #339933;
+  color: #faf5f5;
   box-shadow: 0 0 5px rgba(0,255,0,.2),
-              inset 0 0 5px rgba(0,255,0,.1);
-  background: linear-gradient(#333933,#222922);
+              inset 0 0 5px rgba(177, 181, 177, 0.1);
+  background: linear-gradient(#707070,#343333);
   animation: glow .8s ease-out infinite alternate;
 }
 @keyframes glow {
    0%{
-    border-color: #339933;
-    box-shadow: 0 0 5px rgba(0,255,0,.2),
+    border-color: #091309;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2),
                 inset 0 0 5px rgba(0,0,0,.1);
   }
    100%{
-    border-color: #6f6;
-    box-shadow: 0 0 20px rgba(0,255,0,.6),
-                inset 0 0 10px rgba(0,255,0,.4);
+    border-color: rgb(255, 255, 255);
+    box-shadow: 0 0 20px rgba(66, 65, 65, 0.6),
+                inset 0 0 10px rgba(0, 0, 0, 0.4);
   }
 }
 button,
@@ -88,29 +105,36 @@ a {
   letter-spacing: 1px;
   cursor: pointer;
   text-decoration: none; /* Added this line for anchor element */
-  color: #868686; /* Added this line for anchor element */
-  
+  color: #f7f4f4; /* Added this line for anchor element */
 }
 
 button:hover,
 a:hover {
-  color: #339933;
-  border: 1px solid #339933;
-  box-shadow: 0 0 5px rgba(0, 255, 0, .3),
+  color: #f3f3f3;
+  
+  /* border: 1px solid #e1ede1; */
+  /* box-shadow: 0 5PX 5px rgba(251, 251, 251, 0.3),
+              0 0 10px rgba(252, 254, 252, 0.2),
+              0 0 15px rgba(255, 255, 255, 0.1),
+              0 2px 0 black;
+              transition: all 0.5; */
+  
+  /* box-shadow: 0 0 5px rgba(160, 232, 160, 0.3),
               0 0 10px rgba(0, 255, 0, .2),
               0 0 15px rgba(0, 255, 0, .1),
-              0 2px 0 black;
+              0 2px 0 black; */
 }
 .link{
   margin-top: 25px;
-  color: #868686;
+  color: #414040;
+  font-weight: 700;
 }
 .link a{
-  color: #339933;
+  color: #ebf5eb;
   text-decoration: none;
 }
 .link a:hover{
-  text-decoration: underline;
+  text-decoration: none;
 }
 @media screen and (max-width: 768px) {
   form {
@@ -129,5 +153,6 @@ a:hover {
     font-size: 16px;
   }
 }
+
 
 
