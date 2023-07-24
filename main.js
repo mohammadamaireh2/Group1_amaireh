@@ -1,9 +1,4 @@
-let buttonlogin = document.querySelector("#btnlogin");
-buttonlogin.addEventListener('click', _ => {
-    window.location.href = "./Register/login.html";
-});
-
-    let buttonlogin1 = document.querySelector("#buttonmain1");
+let buttonlogin = document.querySelector("#buttonmain1");
     let startquiz = document.querySelector("#startquiz");
     let LogOut= document.querySelector("#LogOut");
     let welc= document.querySelector('#welcome');
@@ -44,4 +39,3 @@ buttonlogin.addEventListener('click', _ => {
         skill.textContent = `We are excited to discover your skills in(${userData.position}),The exam comprises 5 questions, with only 10 seconds for each response.!`
 
     }
-        

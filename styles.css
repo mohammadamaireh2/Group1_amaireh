@@ -1,10 +1,11 @@
 body {
   background-image: url(./1690103538773\ \(2\).jpg);
   background-repeat: no-repeat;
-background-size: cover;
-height:80vh;
-background-color: #DBDBDB;
-overflow: hidden;}
+  background-size: cover;
+  height:80vh ;
+  overflow: hidden;
+  background-color: #DBDBDB;
+}
 
 .main {
   margin-top: 10%;
@@ -15,8 +16,19 @@ overflow: hidden;}
 #mainimg {
   width: 200px;
 }
-#buttonmain2,#btnlogin,#startbtn,#logoutbtn{
-
+#buttonmain2,#buttonmain1,#startquiz,#LogOut{
+  display:inline-block;
+  background-color:#838F79;
+  color:black;
+  text-decoration:none;
+  border: none;
+  border-radius: 5px;
+  margin-left: 2%;
+  margin-top: 5%;
+  font-size: medium;
+  width: 80px;
+  height: 40px; /* "PX" should be in lowercase */
+}
 #LogOut:hover {
   background-color:#454D3B;
 }
@@ -35,9 +47,6 @@ overflow: hidden;}
 /* It's better to group the hover and active states together */
 
 #buttonmain2:active {
-  background-color:#454D3B;}
-  #logoutbtn:hover{background-color:#454D3B;}
-  #startbtn:hover{background-color:#454D3B;}
   background-color: #454D3B;
 }
 
