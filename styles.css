@@ -2,7 +2,9 @@ body{
   background-image: url(./1690103538773\ \(2\).jpg);
   background-repeat: no-repeat;
 background-size: cover;
-height: 550px;}
+height: 80vh;
+overflow: hidden;
+}
 .main{
 
   margin-top:10%;
@@ -12,7 +14,7 @@ height: 550px;}
 #mainimg{
 width: 200px;
 }
-#buttonmain2,#btnlogin{
+#buttonmain2,#buttonmain1,#startquiz,#LogOut{
   display:inline-block;
   background-color:#838F79;
   color:black;
@@ -25,13 +27,18 @@ width: 200px;
   height: 40PX;
 
 }
-
+#LogOut:hover {
+  background-color:#454D3B;
+}
+#startquiz:hover {
+  background-color:#454D3B;
+}
 #buttonmain2:hover {
   background-color:#454D3B;
 }
 
 
-#btnlogin:hover {
+#buttonmain1:hover {
   background-color:#454D3B;
 }
 #buttonmain2:active {
@@ -73,3 +80,6 @@ width: 200px;
     margin-top: 20%;
   
 }}
+.hide {
+  display: none;
+}

@@ -71,6 +71,7 @@
     width: 100%;
   }
   
+  
   input:focus{
     color: #339933;
     box-shadow: 0 0 5px rgba(0,255,0,.2),
