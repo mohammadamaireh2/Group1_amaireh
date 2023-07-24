@@ -97,7 +97,6 @@ function login() {
     if (storedUserData) {
         
         if (email === storedUserData.Email && password === storedUserData.Password) {
-            alert('done')
             return true
         } else {
             alert('Invalid email or password.');
@@ -121,9 +120,7 @@ buttonlogin.addEventListener('click', (e)=> {
     }
     else{
        
-        console.log(`clicked`);
-        
-    
+        window.location.href = "../index.html";
     }
 })
 

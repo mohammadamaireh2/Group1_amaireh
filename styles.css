@@ -2,8 +2,9 @@ body{
   background-image: url(./1690103538773\ \(2\).jpg);
   background-repeat: no-repeat;
 background-size: cover;
-height: 530px;
-background-color: #DBDBDB;}
+height:80vh;
+background-color: #DBDBDB;
+overflow: hidden;}
 .main{
 
   margin-top:10%;
@@ -13,7 +14,7 @@ background-color: #DBDBDB;}
 #mainimg{
 width: 200px;
 }
-#buttonmain2,#btnlogin{
+#buttonmain2,#btnlogin,#startbtn,#logoutbtn{
   display:inline-block;
   background-color:#838F79;
   color:black;
@@ -37,8 +38,10 @@ width: 200px;
   background-color:#454D3B;
 }
 #buttonmain2:active {
-  background-color:#454D3B;
-}
+  background-color:#454D3B;}
+  #logoutbtn:hover{background-color:#454D3B;}
+  #startbtn:hover{background-color:#454D3B;}
+
 /* Responsive adjustments for buttons */
 @media (max-width: 700px) {
   #buttonmain2, #btnlogin {
