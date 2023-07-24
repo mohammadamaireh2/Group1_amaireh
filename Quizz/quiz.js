@@ -12,9 +12,9 @@ let startButton = document.getElementById("start-button");
 
 let storedData = JSON.parse(localStorage.getItem('userData'));
 
-  let quizPosition = storedData.position
-  console.log(quizPosition);
-  
+let quizPosition = storedData.position
+console.log(quizPosition);
+
 let questionCount;
 let scoreCount = 0;
 let count = 11;
@@ -22,7 +22,7 @@ let countdown;
 var quizArray = []
 //Questions html / css / js
 if (quizPosition === 'html'){
-     quizArray = [
+    quizArray = [
     {
         id: "0",
         question: "Which is the most widely spoken language in the world?",
@@ -61,7 +61,7 @@ if (quizPosition === 'html'){
     }
     
 ];} else if (quizPosition === 'css'){
- quizArray = [
+quizArray = [
     {
         id: "0",
         question: "HTML STANDS FOR ",
