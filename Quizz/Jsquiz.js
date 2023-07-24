@@ -12,9 +12,9 @@ let startButton = document.getElementById("start-button");
 
 let storedData = JSON.parse(localStorage.getItem('userData'));
 
-let quizPosition = storedData.position
-console.log(quizPosition);
-
+  let quizPosition = storedData.position
+  console.log(quizPosition);
+  
 let questionCount;
 let scoreCount = 0;
 let count = 11;
@@ -22,118 +22,121 @@ let countdown;
 var quizArray = []
 //Questions html / css / js
 if (quizPosition === 'html'){
-    quizArray = [
+     quizArray = [
     {
         id: "0",
-        question: "What does HTML stand for?",
-        options: ["home tool markup language", "hyperlinks and text markup language ", "hyper text markup language", "none"],
-        correct: "hyper text markup language",
+        question: "Which is the most widely spoken language in the world?",
+        options: ["Spanish", "Mandarin", "English", "German"],
+        correct: "Mandarin",
     },
     {
         id: "1",
-        question: "Which HTML attribute specifies an alternate text for an image, if the image cannot be displayed?",
-        options: ["alt", "src", "title", "longdesc"],
-        correct: "alt",
+        question: "Which is the only continent in the world without a desert?",
+        options: ["North America", "Asia", "Africa", "Europe"],
+        correct: "Europe",
     },
     {
         id: "2",
-        question: "Choose the correct HTML element to define important text",
-        options: ["<i>", "<b>", "<strong>", "<important>"],
-        correct: "<strong>",
+        question: "Who invented Computer?",
+        options: ["Charles Babbage", "Henry Luce", "Henry Babbage", "Charles Luce"],
+        correct: "Charles Babbage",
     },
     {
         id: "3",
-        question: "Which of these elements are all <table> elements?",
-        options: ["<table><tr><tt>","<thead><body><tr>","<table><tr><td>","<table><head><tfoot>"],
-        correct: "<table><tr><td>", 
-      
+        question: "What do you call a computer on a network that requests files from another computer?",
+        options: ["A client", "A host", "A router", "A web server"],
+        correct: "A client",
     },
     {
         id: "4",
-        question: "The HTML <canvas> element is used to:",
-        options: ["display database records", "manipulate data in MySQL", "create draggable elements", "draw graphics"],
-        correct: "draw graphics",
+        question: "Hardware devices that are not part of the main computer system and are often added later to the system.",
+        options: ["Peripheral", "Clip art", "Highlight", "Execute"],
+        correct: "Peripheral",
+    },
+    {
+        id: "5",
+        question: "The main computer that stores the files that can be sent to computers that are networked together is:",
+        options: ["Clip art", "Mother board", "Peripheral", "File server"],
+        correct: "File server",
     }
     
 ];} else if (quizPosition === 'css'){
-quizArray = [
+ quizArray = [
     {
-     id: "0",
-     question: "What is the correct HTML for referring to an external style sheet? ",
-     options: [`<link rel="stylesheet" type="text/css" href="mystyle.css">  `, `<style src="mystyle.css">`, `<stylesheet>mystyle.css</stylesheet>`, `none`],
-     correct: `<link rel="stylesheet" type="text/css" href="mystyle.css">`,
+        id: "0",
+        question: "HTML STANDS FOR ",
+        options: ["HYP", "Mandarin", "English", "German"],
+        correct: "Hyper Markup Language",
     },
-
     {
-     id: "1",
-     question: " Which is the correct CSS syntax?",
-     options: ["body:color=black;", "body {color: black;} ", "{body;color:black;}", "{body:color=black;}"],
-     correct: "body {color: black;}",
+        id: "1",
+        question: "HTML STANDS FOR ",
+        options: ["HYP", "Mandarin", "English", "German"],
+        correct: "Hyper Markup Language",
     },
-
     {
-     id: "2",
-     question: " Which CSS property is used to change the text color of an element? ",
-     options: ["fgcolor", "text-color", "color","none"],
-     correct: "color",
+        id: "2",
+        question: "HTML STANDS FOR ",
+        options: ["HYP", "Mandarin", "English", "German"],
+        correct: "Hyper Markup Language",
     },
-
     {
-     id: "3",
-        question: "How do you make each word in a text start with a capital letter?",
-        options: ["You can't do that with CSS", "text-transform:capitalize  ", "transform:capitalize", "text-style:capitalize"],
-        correct: "text-transform:capitalize",
+        id: "3",
+        question: "HTML STANDS FOR ",
+        options: ["HYP", "Mandarin", "English", "German"],
+        correct: "Hyper Markup Language",
     },
-
     {
-     id: "4",
-        question: ` How do you display a border like this:
-
-        The top border = 10 pixels
-        The bottom border = 5 pixels
-        The left border = 20 pixels
-        The right border = 1pixel?`,
-        options: ["border-width:10px 20px 5px 1px;", "border-width:10px 5px 20px 1px;", "border-width:10px 1px 5px 20px; ", "border-width:5px 20px 10px 1px"],
-        correct: "border-width:10px 1px 5px 20px;",
+        id: "4",
+        question: "HTML STANDS FOR ",
+        options: ["HYP", "Mandarin", "English", "German"],
+        correct: "Hyper Markup Language",
+    },
+    {
+        id: "5",
+        question: "HTML STANDS FOR ",
+        options: ["HYP", "Mandarin", "English", "German"],
+        correct: "Hyper Markup Language",
     }
- ];}
 
-
+];}
 else if (quizPosition === 'js'){
     quizArray = [
-      
        {
-        id: "0",
-        question: "How to write an IF statement in JavaScript?",
-        options: ["if i = 5","if i == 5 then","if (i == 5)","if i = 5 then"],
-        correct: "if (i == 5)", 
-       },
-       
-       {
-        id: "1",
-        question: "How do you create a function in JavaScript?",
-        options: ["function myFunction()","function = myFunction()","function:myFunction()","none"],
-        correct: "function myFunction()",
-       },
-     
-       {
-        id: "2",
-        question: "How does a WHILE loop start?",
-        options: ["while i = 1 to 10","while (i <= 10; i++)","while (i <= 10)","none"],
-        correct: "while (i <= 10)",
-       },
-       
-       {
-        id: "3",
-        question: "How does a FOR loop start?",
-        options: ["for (i = 0; i <= 5; i++)","for (i <= 5; i++)","for (i = 0; i <= 5)","for i = 1 to 5"],
-        correct: "for (i = 0; i <= 5; i++)",
+           id: "0",
+           question: "HTML STANDS FOR ",
+           options: ["Hyper Markup Language", "Cascading style sheet", "English", "German"],
+           correct: "Hyper Markup Language",
        },
        {
-        id: "4",
-        question: "How do you declare a JavaScript variable?",
-        options: ["v carName;","variable carName;","var carName;","none"],
-        correct: "var carName;",
+           id: "1",
+           question: "HTML STANDS FOR ",
+           options: ["Hyper Markup Language", "Cascading style sheet", "English", "German"],
+           correct: "Hyper Markup Language",
+       },
+       {
+           id: "2",
+           question: "HTML STANDS FOR ",
+           options: ["Hyper Markup Language", "Cascading style sheet", "English", "German"],
+           correct: "Hyper Markup Language",
+       },
+       {
+           id: "3",
+           question: "HTML STANDS FOR ",
+           options: ["Hyper Markup Language", "Cascading style sheet", "English", "German"],
+           correct: "Hyper Markup Language",
+       },
+       {
+           id: "4",
+           question: "HTML STANDS FOR ",
+           options: ["Hyper Markup Language", "Cascading style sheet", "English", "German"],
+           correct: "Hyper Markup Language",
+       },
+       {
+           id: "5",
+           question: "HTML STANDS FOR ",
+           options: ["Hyper Markup Language", "Cascading style sheet", "English", "German"],
+           correct: "Hyper Markup Language",
        }
    
    ];}
