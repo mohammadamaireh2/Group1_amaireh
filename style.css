@@ -51,6 +51,7 @@ body {
 }
 
 .glowing-txt {
+  
   float: left;
   margin-right: -0.8em;
   -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
