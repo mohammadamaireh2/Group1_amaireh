@@ -111,23 +111,15 @@ function login() {
 }
 
 // login btn navgate to homepage
-           
-let buttonlogin = document.querySelector("#loginbtn")
-buttonlogin.addEventListener('click', (e)=> {
-    
-    if (!login()){
-        
-       
-    }
-    else{
-       
-        console.log(`clicked`);
-        
-    
-    }
-})
+let buttonlogin = document.querySelector("#btnlogin");
 
-let buttonlogin2 = document.querySelector("#btnlogin")
-buttonlogin2.addEventListener('click', () => buttonlogin.click() )
-
-      
+buttonlogin.addEventListener('click', (event) => {
+    event.preventDefault();
+    if (!login()) {
+       
+        console.log("Login failed.");
+    } else {
+        console.log("login succes");
+        window.location.href = "../index.html";
+    }
+});
