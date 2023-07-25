@@ -7,6 +7,10 @@ body {
   background-color: #DBDBDB;
 }
 
+body.logged-in {
+  /* خلفية بعد تسجيل الدخول */
+  background-image: url('/1690267028116.jpg');
+}
 .main {
   margin-top: 10%;
   width: 40%;
@@ -89,4 +93,22 @@ body {
 }}
 .hide {
   display: none;
+}.main.slide-in {
+  animation: slideInFromRight 1s ease-in;
 }
+/* في ملف styles.css */
+
+/* حركة ظهور الصفحة الرئيسية بعد تسجيل الدخول */
+.main.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
