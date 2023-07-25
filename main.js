@@ -25,7 +25,7 @@ let buttonlogin = document.querySelector("#buttonmain1");
         startquiz.style.display = "none";
         LogOut.style.display = "none";
         welc.textContent = "Welcome in Quee";
-        skill.textContent = `We are excited to discover your skills,The exam comprises 5 questions, with only 10 seconds for each response.!`
+        skill.textContent = `We are excited to discover your skills,The exam comprises 10 questions, with only 10 seconds for each response.!`
     })
     //defult
     if (dataisloged == true){

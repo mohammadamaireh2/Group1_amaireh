@@ -5,18 +5,24 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  height: 100vh;
-  background: #ebeaea;
-}
-.start-screen {
   
-  position: absolute;
+  background-size: cover;
+  background-image: url(asas.jpg);
+  height: 100vh;
+  /* background: #ebeaea; */
+}
+
+.start-screen {
+  font-size: 1.5em;
+  margin-bottom: 10%;
+  margin-left: 1%;
+  position: relative;
   top: 0;
-  width: 100%;
+  width: 95%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items:  baseline;
   justify-content: center;
 }
 .score-container {
@@ -38,6 +44,7 @@ body {
 }
 
 .result-container {
+  background-color: #959B8C;
   margin-top: 20px;
 }
 
@@ -58,14 +65,14 @@ body {
 .result-correct-answer {
   margin-top: 5px;
   font-weight: bold;
-  color: #050605;
+  color: #7dea98;
 }
 
 .restart {
   
   display: inline-block;
-  background-color: #339933;
-  color: #fff;
+  background-color: #bdbeba;
+  color: #0b0a0a;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
@@ -75,7 +82,7 @@ body {
 }
 
 .restart:hover {
-  background-color: #267a26;
+  background-color: #e1e1cd;
 }
 button:hover{
 
@@ -91,7 +98,15 @@ button {
   cursor: pointer;
   
 }
-#start-button,
+#start-button{
+  position: absolute;
+  margin-top: -30%;
+  margin-left: 25%;
+  font-size: 1.3em;
+  padding: 0.5em 1.8em;
+  border-radius: 0.2em;
+  box-shadow: 0 20px 30px rgba(147, 145, 145, 0.4);
+}
 #restart {
   font-size: 1.3em;
   padding: 0.5em 1.8em;
@@ -102,18 +117,17 @@ button {
   margin-top: 0.9em;
 }
 #display-container {
-  background-color: #959B8C;
+  background-color: #9a9f93;
   padding: 3.1em 1.8em;
-  width: 80%;
-  max-width: 37.5em;
-  margin: 0 auto;
+  width: 42%;
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
-  left: 50%;
+  left: 43%;
   border-radius: 0.6em;
 }
 .header {
+
   margin-bottom: 1.8em;
   display: flex;
   justify-content: space-between;
@@ -122,6 +136,7 @@ button {
   border-bottom: 0.1em solid #eeeef5;
 }
 .timer-div {
+
   background-color: #dededd;
   width: 7.5em;
   border-radius: 1.8em;
@@ -129,6 +144,7 @@ button {
   align-items: center;
   justify-content: space-between;
   padding: 0.7em 1.8em;
+
 }
 .question {
   margin-bottom: 1.25em;
