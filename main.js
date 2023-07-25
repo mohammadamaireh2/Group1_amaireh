@@ -59,4 +59,3 @@ let buttonlogin = document.querySelector("#buttonmain1");
    LogOut.addEventListener('click', _ => {
 
         window.location.href = "./index.html";})}
-        
