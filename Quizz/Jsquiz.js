@@ -9,7 +9,7 @@ let userScore = document.getElementById("user-score");
 let startScreen = document.querySelector(".start-screen");
 let startButton = document.getElementById("start-button");
 let storedData = JSON.parse(localStorage.getItem('userData'));
-let quizPosition = storedData.position
+let quizPosition = storedData.Position
 console.log(quizPosition);
 let questionCount;
 let scoreCount = 0;
@@ -20,52 +20,73 @@ var quizArray = []
 
 const totalTime = 180;
 
+
+
 //Questions html / css / js
 if (quizPosition === 'html'){
-     quizArray = [
+    quizArray = [
     {
         id: "0",
-        question: "Which is the most widely spoken language in the world?",
-        options: ["Spanish", "Mandarin", "English", "German"],
-        correct: "Mandarin",
-        selected: null,
+        question: "What does HTML stand for?",
+        options: ["home tool markup language", "hyperlinks and text markup language", "hyper text markup language", "none"],
+        correct:  "hyper text markup language",
     },
     {
         id: "1",
-        question: "Which is the only continent in the world without a desert?",
-        options: ["North America", "Asia", "Africa", "Europe"],
-        correct: "Europe",
-        selected: null,
+        question: " Which HTML attribute specifies an alternate text for an image, if the image cannot be displayed? ",
+        options: ["alt", "src", "title", "longdesc"],
+        correct: "alt",
     },
     {
         id: "2",
-        question: "Who invented Computer?",
-        options: ["Charles Babbage", "Henry Luce", "Henry Babbage", "Charles Luce"],
-        correct: "Charles Babbage",
-        selected: null,
+        question: " Choose the correct HTML element for the largest heading: ",
+        options: [ "h1", "head", "header", "h6"],
+        correct:   "h1",
     },
     {
         id: "3",
-        question: "What do you call a computer on a network that requests files from another computer?",
-        options: ["A client", "A host", "A router", "A web server"],
-        correct: "A client",
-        selected: null,
+        question: "Choose the correct HTML element to define important text",
+        options: ["< i >", "< b >", "< strong >", "< important >"],
+        correct: "< strong >",
     },
     {
         id: "4",
-        question: "Hardware devices that are not part of the main computer system and are often added later to the system.",
-        options: ["Peripheral", "Clip art", "Highlight", "Execute"],
-        correct: "Peripheral",
-        selected: null,
+        question: " Which of these elements are all <table> elements? ",
+        options: ["< table >< tr >< tt >","< thead >< body >< tr >","< table >< tr >< td >","< table >< head >< tfoot >"],
+        correct: "< table >< tr >< td >", 
+      
     },
     {
         id: "5",
-        question: "The main computer that stores the files that can be sent to computers that are networked together is:",
-        options: ["Clip art", "Mother board", "Peripheral", "File server"],
-        correct: "File server",
+        question: "The HTML < canvas > element is used to:",
+        options: ["display database records", "manipulate data in MySQL", "create draggable elements", "draw graphics"],
+        correct: "draw graphics",
+    },
+    {
+        id: "6",
+        question: " Which HTML element defines navigation links? ",
+        options: ["< nav >","< navigation >","< navigate >","none"],
+        correct: "< nav >",
+    },
+    {
+        id: "7",
+        question: " What is the correct HTML element for playing audio files? ",
+        options: ["< mp3 >","< sound >","< audio >","< mp4 >"],
+        correct: "< audio >",
+    },
+    {
+        id: "8",
+        question: " How can you make a numbered list? ",
+        options: ["< dl >","< ul >","< ol >","< list >"],
+        correct: "< ol >", 
+    },
+    {
+        id: "9",
+        question: "Choose the correct HTML element to define emphasized text",
+        options: ["< italic >","< em >","< i >","< b >"],
+        correct: "< em >",
     }
-    
-];}
+];} 
 
 
 // Initialize userData from local storage or create a new object if not present
@@ -94,14 +115,22 @@ const startTimer = () => {
   
     countdown = setInterval(() => {
       count--;
+      const min =Math.floor(count / 60);
+    const sec =Math.floor(count % 60);
       if (count <= 0) {
         clearInterval(countdown);
         displayResult();
       } else {
-        timeLeft.innerHTML = `${count}s`;
+        timeLeft.innerHTML = `${min}:${sec<10?'0':''}${sec}s`;
       }
     }, 1000);
   };
+  
+  function displaytime(second){
+    const min =Math.floor(second / 60);
+    const sec =Math.floor(second % 60);
+    timeH.innerHTML= `${min}:${sec<10?'0':''}${sec}`
+    }
   
 //Display quiz
 let quizDisplay = (questionCount) => {
@@ -194,16 +223,7 @@ function displayResult()
 
         // Display the user score
         userScore.innerHTML =
-          
-            userScore.innerHTML =
-          "Your score is " +
-          scoreCount * 10 +
-         "% out of " +
-         questionCount * 10 +
-         "%";
-         scoreCount >= 3
-        ? (userScore.style.color = "green")
-        : (userScore.style.color = "red");
+            "Your score is " + scoreCount + " out of " + quizArray.length + " questions";
 
         // Display the result page only if it hasn't been displayed before
         if (!resultDisplayed) {
@@ -289,19 +309,19 @@ function initial() {
     quizContainer.innerHTML = "";
     questionCount = 0;
     scoreCount = 0;
- 
     count = totalTime;
-  startTimer();
+    startTimer();
     quizCreator();
     quizDisplay(questionCount);
 }
 
-//when user click on start button
+// when user click on start button
 startButton.addEventListener("click", () => {
     startScreen.classList.add("hide");
     displayContainer.classList.remove("hide");
     initial();
 });
+
 
 //hide quiz and display start screen
 window.onload = () => {
@@ -309,3 +329,8 @@ window.onload = () => {
     displayContainer.classList.add("hide");
     nextBtn.disabled = true;
 };
+
+
+// ------------------------------ main page
+
+
