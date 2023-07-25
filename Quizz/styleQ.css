@@ -18,16 +18,16 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .score-container {
-  justify-content: center;
   text-align: center;
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   max-width: 600px;
   margin: auto;
-  height: 100vh;
-    overflow: hidden;
+  height: auto;
+  
 }
 
 .score-container h2 {
@@ -74,6 +74,17 @@ body {
 .restart:hover {
   background-color: #267a26;
 }
+
+/* Style the "Restart" button */
+#restart {
+  font-size: 1.3em;
+  padding: 0.5em 1.8em;
+  border-radius: 0.2em;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+  margin-top: 0.9em;
+}
+
+
 button {
   border: none;
   outline: none;
