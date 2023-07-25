@@ -1,4 +1,4 @@
-
+// JavaScript code
 let timeLeft = document.querySelector(".time-left");
 let quizContainer = document.getElementById("container");
 let nextBtn = document.getElementById("next-button");
@@ -10,8 +10,11 @@ let userScore = document.getElementById("user-score");
 let startScreen = document.querySelector(".start-screen");
 let startButton = document.getElementById("start-button");
 let storedData = JSON.parse(localStorage.getItem('userData'));
-let quizPosition = storedData.Position
+
+let quizPosition = storedData ? storedData.position : 'html'; // Provide a default value if 'userData' doesn't exist in localStorage
+
 console.log(quizPosition);
+
 let questionCount;
 let scoreCount = 0;
 let count = 11;
