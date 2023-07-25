@@ -6,6 +6,8 @@ let buttonlogin = document.querySelector("#buttonmain1");
     let dataisloged = JSON.parse(localStorage.getItem('isloged'));
         console.log(dataisloged);
     let userData = JSON.parse(localStorage.getItem('userData'));
+    let userattempt = JSON.parse(localStorage.getItem('userattempt'))
+
     buttonlogin.addEventListener('click', _ => {
         window.location.href = "./Register/Login.html";
     });
@@ -27,6 +29,7 @@ let buttonlogin = document.querySelector("#buttonmain1");
         skill.textContent = `We are excited to discover your skills,The exam comprises 10 questions, with only 3 minute for  response.!`
     })
     //defult
+  
     if (dataisloged == true){
         console.log('testt');
         buttonlogin.style.display = "none";
@@ -46,7 +49,13 @@ let buttonlogin = document.querySelector("#buttonmain1");
         window.location.href = "./Quizz/quiz.html";
     });
     
-
+    if (userattempt == true){
+        console.log(userattempt);
+        startquiz.style.display = "none";
+        welc.textContent = "Welcome " + userData.FirstName + " " + "to Quee";
+        skill.textContent = `Thank you for taking our quiz we will contact you shortly .!`
+      
+    }
    LogOut.addEventListener('click', _ => {
 
         window.location.href = "./index.html";})}

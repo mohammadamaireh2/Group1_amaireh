@@ -21,6 +21,7 @@ var quizArray = []
 const totalTime = 180;
 
 
+// --------- auto starting
 
 //Questions html / css / js
 if (quizPosition === 'html'){
@@ -99,13 +100,8 @@ if (!userData.answers) {
 
 //Restart Quiz
 restart.addEventListener("click", () => {
-    initial();
-    displayContainer.classList.remove("hide");
-    scoreContainer.classList.add("hide");
+    window.location.href='../index.html'
 });
-
-
-
 // Timer
 const startTimer = () => {
     count = totalTime;
@@ -216,6 +212,7 @@ function checker(userOption) {
   }
 // check result page if it displayed or not
 let resultDisplayed = false;
+let userattempt = false;
 function displayResult()
 {
     displayContainer.classList.add("hide");
@@ -262,6 +259,8 @@ function displayResult()
             
             scoreContainer.appendChild(resultContainer);
             resultDisplayed = true;
+            userattempt=true;
+            localStorage.setItem("userattempt", JSON.stringify(userattempt));
         }
     
 }
